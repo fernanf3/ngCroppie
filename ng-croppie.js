@@ -101,7 +101,11 @@
                     intervalID = window.setInterval(function() {
                         c.result('canvas').then(function(img) {
                             scope.$apply(function() {
-                                scope.ngModel = img;
+                                if(scope.src != undefined){
+                                  scope.ngModel = img;
+                                } else{
+                                  scope.ngModel = false;
+                                }
                             });
                         });
                     }, 250);
@@ -115,7 +119,11 @@
                         evt.preventDefault();
                         c.result('canvas').then(function(img) {
                             scope.$apply(function() {
-                                scope.ngModel = img;
+                                if(scope.src != undefined){
+                                  scope.ngModel = img;
+                                } else{
+                                  scope.ngModel = false;
+                                }
                             });
                         });
 
@@ -126,7 +134,11 @@
                         evt.preventDefault();
                         c.result('canvas').then(function(img) {
                             scope.$apply(function() {
-                                scope.ngModel = img;
+                                if(scope.src != undefined){
+                                  scope.ngModel = img;
+                                } else{
+                                  scope.ngModel = false;
+                                }
                             });
                         });
 
@@ -156,7 +168,11 @@
                         c.rotate(newValue - oldValue);
                         c.result('canvas').then(function(img) {
                             scope.$apply(function () {
-                                scope.ngModel = img;
+                                if(scope.src != undefined){
+                                  scope.ngModel = img;
+                                } else{
+                                  scope.ngModel = false;
+                                }
                             });
                         });
                     }
@@ -169,7 +185,11 @@
                         $timeout(function() {  // delay for the ng-file-upload
                             c.result('canvas').then(function(img) {
                                 scope.$apply(function () {
-                                    scope.ngModel = img;
+                                    if(scope.src != undefined){
+                                      scope.ngModel = img;
+                                    } else{
+                                      scope.ngModel = false;
+                                    }
                                 });
                             });
                         }, 250);
