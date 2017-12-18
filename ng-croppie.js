@@ -169,10 +169,13 @@
                         $timeout(function() {  // delay for the ng-file-upload
                             c.result('canvas').then(function(img) {
                                 scope.$apply(function () {
-                                    scope.ngModel = img;
+                                    if(img)
+                                        scope.ngModel = img;
+                                    else 
+                                        scope.ngModel = false;
                                 });
                             });
-                        }, 250);
+                        }, 500);
                     }
                 });
             }
